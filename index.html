@@ -129,7 +129,7 @@
         <summary>How it works</summary>
         <div class="more">
           <h4>Why I'm building it</h4>
-          <p>Most reporting tools end the moment you hit submit. I wanted a public record that carries on, so a problem can't quietly disappear.</p>
+          <p>I kept hearing friends and neighbours say the same thing: issues get reported and never get fixed. So I looked into where the bottleneck sits, and asked whether a public record that tracks every report, with the community confirming it's still a problem, would put more pressure on local authorities than a private inbox ever could. Most reporting tools end the moment you hit submit. This one carries on, so a problem can't quietly disappear.</p>
           <h4>Data model</h4>
           <p>A relational Postgres schema covers authorities, wards, postcodes, infrastructure assets, issues, photos, confirmations, comments, followers, notifications and moderation actions. Every status change is written to a history table, so an issue's whole life is auditable. Row-level security controls who can see and change what.</p>
           <h4>Geographic routing and open data</h4>
