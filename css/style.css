@@ -157,9 +157,9 @@ details[open] summary::before { transform: rotate(45deg); }
 .btn.primary:hover { background: var(--ink); border-color: var(--ink); }
 .foot { padding: 2rem 0 3rem; font-size: .88rem; color: var(--ink-2); border-top: 2px solid rgba(20, 70, 60, .12); }
 
-/* the </> that follows you down the page; its motion is driven from main.js */
-.buddy { position: fixed; top: 0; left: 0; z-index: 15; pointer-events: none; will-change: transform; display: flex; align-items: center; font: 800 2.5rem/1 var(--display); letter-spacing: -.02em; color: var(--buddy); transition: color .5s; }
-.bp { display: inline-block; will-change: transform; }
+/* the sparkle that follows you down the page */
+.buddy { position: fixed; top: 0; left: 0; width: 38px; height: 38px; z-index: 15; pointer-events: none; will-change: transform; filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .12)); }
+.buddy svg { width: 100%; height: 100%; fill: var(--buddy); transition: fill .5s; }
 
 /* reveal on scroll */
 .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
@@ -178,7 +178,7 @@ details[open] summary::before { transform: rotate(45deg); }
   .why-grid { gap: 1.75rem; }
   .photo { position: static; max-width: 260px; }
   .timeline li { grid-template-columns: 1fr; gap: .1rem; }
-  .buddy { font-size: 1.8rem; }
+  .buddy { width: 28px; height: 28px; }
 }
 
 @media print {

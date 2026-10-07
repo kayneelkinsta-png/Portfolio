@@ -33,38 +33,22 @@
     document.querySelectorAll("main > section").forEach(function (s) { so.observe(s); });
   }
 
-  // The </>: eases down the right-hand side behind you, flying apart while you scroll and settling back together when you stop
+  // The sparkle: weaves down the right-hand side as you scroll, spinning with the page
   if (!buddy || reduce) return;
-  var pl = buddy.querySelector(".l"), pm = buddy.querySelector(".m"), pr = buddy.querySelector(".r");
-  var cur = { x: 0, y: 70, s: 0, v: 0, dir: 1 }, lastY = window.scrollY, running = false;
-  function target() {
+  var ticking = false;
+  function place() {
+    ticking = false;
     var vw = window.innerWidth, vh = window.innerHeight;
     var max = Math.max(1, document.documentElement.scrollHeight - vh);
     var p = Math.min(1, Math.max(0, window.scrollY / max));
-    var w = vw < 760 ? 52 : 74;
-    return {
-      x: (vw < 760 ? vw - w - 8 : Math.min(vw - w - 20, (vw + 1000) / 2 + 12)) + (vw < 760 ? 6 : 20) * Math.sin(p * 22),
-      y: 70 + p * (vh - 150)
-    };
+    var size = vw < 760 ? 28 : 38;
+    var track = vw < 760 ? vw - size - 6 : Math.min(vw - size - 20, (vw + 1000) / 2 + 24);
+    var sway = (vw < 760 ? 8 : 26) * Math.sin(p * 22);
+    var y = 70 + p * (vh - 140 - size);
+    buddy.style.transform = "translate(" + (track + sway).toFixed(1) + "px," + y.toFixed(1) + "px) rotate(" + (window.scrollY * 0.18).toFixed(1) + "deg)";
   }
-  function frame() {
-    var t = target(), sy = window.scrollY, dy = sy - lastY; lastY = sy;
-    if (dy) cur.dir = dy > 0 ? 1 : -1;
-    cur.v += (Math.min(1, Math.abs(dy) / 18) - cur.v) * 0.12;      // how hard you're scrolling, smoothed
-    cur.s += (cur.v - cur.s) * 0.14;                                  // spread chases it, so it eases in and out
-    cur.x += (t.x - cur.x) * 0.16;
-    cur.y += (t.y - cur.y) * 0.16;
-    var s = cur.s, d = cur.dir;
-    buddy.style.transform = "translate3d(" + cur.x.toFixed(1) + "px," + cur.y.toFixed(1) + "px,0)";
-    pl.style.transform = "translate3d(" + (-20 * s).toFixed(1) + "px," + (-18 * s * d).toFixed(1) + "px,0) rotate(" + (-40 * s * d).toFixed(1) + "deg)";
-    pm.style.transform = "translate3d(0," + (26 * s * d).toFixed(1) + "px,0) rotate(" + (80 * s * d).toFixed(1) + "deg)";
-    pr.style.transform = "translate3d(" + (22 * s).toFixed(1) + "px," + (14 * s * d).toFixed(1) + "px,0) rotate(" + (46 * s * d).toFixed(1) + "deg)";
-    var settled = Math.abs(t.x - cur.x) < 0.3 && Math.abs(t.y - cur.y) < 0.3 && cur.s < 0.003 && cur.v < 0.003 && !dy;
-    if (settled) { running = false; return; }
-    requestAnimationFrame(frame);
-  }
-  function wake() { if (!running) { running = true; requestAnimationFrame(frame); } }
-  window.addEventListener("scroll", wake, { passive: true });
-  window.addEventListener("resize", wake);
-  wake();
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(place); } }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  place();
 })();
