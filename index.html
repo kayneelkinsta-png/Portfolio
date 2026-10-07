@@ -72,13 +72,16 @@
     <details>
       <summary>How it works</summary>
       <div class="more">
+        <h4>Why I built it</h4>
         <p>The best technical recruiting happens before the requisition exists. I used to do that by hand: reading funding news, watching careers pages, spotting who was about to have more roles than recruiters. Lighthouse does the legwork so I can spend the time on judgement.</p>
+        <h4>What it does</h4>
         <ul>
           <li><strong>Leads</strong> scores companies on how many open technical roles each in-house recruiter is carrying, how fast hiring is accelerating, recent funding and geographic spread.</li>
           <li><strong>Scout</strong> finds contract and permanent roles across six sources and scores each against my own experience, showing the gaps as well as the matches.</li>
           <li><strong>Outreach</strong> drafts from a lead's own data. I approve, then it sends from my mailbox and tracks replies.</li>
           <li><strong>Data</strong> reports on its own records: freshness, rate limits, response rates, rejection reasons.</li>
         </ul>
+        <h4>Rules I built in</h4>
         <p>Some decisions I'm proud of: every lead carries the argument against it. Every panel shows how old its data is. It never invents a contact and never guesses a day rate. It doesn't scrape LinkedIn.</p>
         <img src="assets/nimbus-architecture.png" width="1080" height="1350" alt="Layered architecture diagram: sources, ingest adapters, normalised schema, cache, snapshots and event log, scoring, outreach and scout, WebGL hub and Claude assistant." loading="lazy">
         <p class="small">The repository is private because it holds real search data. A demo mode runs on invented data and I'm happy to walk you through it live.</p>
@@ -97,15 +100,18 @@
     <img class="card-img portrait" src="assets/rabbit-hole.jpg" width="1080" height="1350" alt="Rabbit Hole showing the world for Chocolate: a circle of orbs, each a linked Wikipedia article with a picture." loading="lazy">
     <p class="built"><b>Built with</b><span>JavaScript</span><span>three.js</span><span>Wikipedia API</span><span>OpenAlex</span><span>PWA</span><span>GitHub Pages + Actions</span></p>
     <details>
-      <summary>More about Rabbit Hole</summary>
+      <summary>How it works</summary>
       <div class="more">
+        <h4>Why I built it</h4>
+        <p>I wanted curiosity to be the way in: no search box, no syllabus, just "what's that?" and a tap. It's also where I practised taking a product from idea to launch and talking about it in public. The direction is a one-stop place to learn a topic, with articles first, then research papers, then video.</p>
+        <h4>What it does</h4>
         <ul>
-          <li>A daily challenge with a streak, and share links that let a friend play or try to beat your result.</li>
-          <li>Research papers appear as a second kind of orb, with authors, citation counts and open-access badges.</li>
-          <li>A notebook where you pin tiles, papers and passages with your notes and the trail that led you there. It formats APA, MLA and Harvard references and exports to Word, PDF or Google Docs. It saves on your device, with no sign-up.</li>
+          <li>Each world is built from one Wikipedia article, and every orb in it is an article it links to. Tap to read, or dive in to land in that world.</li>
+          <li>A daily challenge gives you a hidden goal to reach in as few worlds as you can. A scheduled job publishes each day's route, and share links let a friend play or try to beat your result.</li>
+          <li>Research papers appear as a second kind of orb, pulled from OpenAlex, with authors, citation counts and open-access badges.</li>
+          <li>A notebook lets you pin tiles, papers and passages with your notes and the trail that led you there. It formats APA, MLA and Harvard references and exports to Word, PDF or Google Docs. It saves on your device, with no sign-up.</li>
           <li>Any topic is a shareable link, and the interface works in six languages.</li>
         </ul>
-        <p>It's where I practised taking a product from idea to launch and talking about it in public.</p>
       </div>
     </details>
   </article>
@@ -121,10 +127,14 @@
       <p class="big-line">See it. Report it. Confirm it. Track it.</p>
       <p class="built"><b>Built with</b><span>TanStack Start</span><span>React</span><span>Supabase</span><span>Tailwind</span></p>
     <details>
-        <summary>More about CivicLens</summary>
+        <summary>How it works</summary>
         <div class="more">
+          <h4>Why I'm building it</h4>
+          <p>Most reporting tools end the moment you hit submit. I wanted a public record that carries on, so a problem can't quietly disappear.</p>
+          <h4>What it does</h4>
           <ul>
-            <li>Consumer-grade and map-first, not a council dashboard.</li>
+            <li>A resident drops a pin on the map and reports an issue, with photos. Its location routes it to the right authority.</li>
+            <li>Other residents confirm it's still a problem. Every status change is kept in a public history, with comments, followers and moderation tools behind it.</li>
             <li>Privacy by design: residents show as a first name and postcode district only.</li>
             <li>Geography and authority routing are generic, so the second council is configuration, not a rebuild.</li>
             <li>Independent: not a council site, and it publishes no council response unless a verified authority provides it.</li>
@@ -143,9 +153,12 @@
       <p class="big-line">Code in. Video out.</p>
       <p class="built"><b>Built with</b><span>Node</span><span>Remotion</span><span>FFmpeg</span><span>Chrome DevTools</span></p>
     <details>
-        <summary>More about the pipeline</summary>
+        <summary>How it works</summary>
         <div class="more">
-          <p>It drives the running app over the Chrome DevTools Protocol on a virtual clock, measures the voiceover lines, and composes the edit in code. It made the launch assets for both Lighthouse and Rabbit Hole.</p>
+          <h4>Why I built it</h4>
+          <p>Product videos are slow to make by hand and impossible to repeat exactly. I wanted launch videos for my own builds that I could redo in minutes whenever the product changed.</p>
+          <h4>What it does</h4>
+          <p>It drives the running app over the Chrome DevTools Protocol on a virtual clock, so every take is identical. It measures the voiceover lines, times them to the footage and composes the edit in code. It made the launch assets for both Lighthouse and Rabbit Hole.</p>
         </div>
       </details>
     </article>
