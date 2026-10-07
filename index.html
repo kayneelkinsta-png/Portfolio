@@ -73,18 +73,19 @@
       <summary>How it works</summary>
       <div class="more">
         <h4>Why I built it</h4>
-        <p>The best technical recruiting happens before the requisition exists. I used to do that by hand: reading funding news, watching careers pages, spotting who was about to have more roles than recruiters. Lighthouse does the legwork so I can spend the time on judgement.</p>
-        <h4>What it does</h4>
-        <ul>
-          <li><strong>Leads</strong> scores companies on how many open technical roles each in-house recruiter is carrying, how fast hiring is accelerating, recent funding and geographic spread.</li>
-          <li><strong>Scout</strong> finds contract and permanent roles across six sources and scores each against my own experience, showing the gaps as well as the matches.</li>
-          <li><strong>Outreach</strong> drafts from a lead's own data. I approve, then it sends from my mailbox and tracks replies.</li>
-          <li><strong>Data</strong> reports on its own records: freshness, rate limits, response rates, rejection reasons.</li>
-        </ul>
-        <h4>Rules I built in</h4>
-        <p>Some decisions I'm proud of: every lead carries the argument against it. Every panel shows how old its data is. It never invents a contact and never guesses a day rate. It doesn't scrape LinkedIn.</p>
+        <p>The best technical recruiting happens before the requisition exists. I used to do that by hand: reading funding news, watching careers pages, spotting who was about to have more roles than recruiters. Lighthouse turns that routine into a data pipeline, so my time goes on judgement and conversations.</p>
+        <h4>Ingestion</h4>
+        <p>One adapter per source, all emitting the same typed schema, so a new source is one file and nothing else changes. Signals come from SEC Form D filings, Companies House share-allotment records, funding-news feeds and the public job-board APIs of the major applicant tracking systems (Greenhouse, Lever, Ashby, SmartRecruiters and others). Contract roles come from six job-board and alert sources. Every request has timeouts, retries and backoff, and any source can fail without taking the rest down.</p>
+        <h4>Data model</h4>
+        <p>Records are resolved to a single company entity, cached in Redis under versioned keys, and snapshotted daily. Two readings of a careers page tell you size; a run of snapshots tells you direction, so Lighthouse tracks hiring velocity, not just headcount. Every action is written to an event log.</p>
+        <h4>Scoring</h4>
+        <p>Pure, unit-tested functions weight four signals: capacity gap (open technical roles per in-house recruiter, 45%), hiring acceleration (25%), funding recency and size (20%) and geographic spread (10%). Small teams are suppressed so the feed isn't noise, and every score ships with its reasons and its caveats. A second model scores each contract role against an evidence bank of my own experience, using a skills taxonomy, and shows the gaps as well as the matches.</p>
+        <h4>Automation and integrations</h4>
+        <p>A tool-calling assistant sits across the data and can query leads and roles, draft outreach and log rejections. It cannot send. Drafts go through a human approval step, then out through the Gmail API with OAuth, and replies are matched back to the thread. Scheduled jobs keep the caches warm, and voice input and output run through speech APIs.</p>
+        <h4>Measuring progress</h4>
+        <p>The Data view reports on the pipeline itself: how fresh each source is, rate-limit use per host, response rate, the email funnel from draft to reply, and why leads were rejected. That's how I tune the scoring, based on what's actually happening in my search.</p>
         <img src="assets/nimbus-architecture.png" width="1080" height="1350" alt="Layered architecture diagram: sources, ingest adapters, normalised schema, cache, snapshots and event log, scoring, outreach and scout, WebGL hub and Claude assistant." loading="lazy">
-        <p class="small">The repository is private because it holds real search data. A demo mode runs on invented data and I'm happy to walk you through it live.</p>
+        <p class="small">The repository is private because it holds real search data. A demo mode runs the whole app on invented data and I'm happy to walk you through it live.</p>
       </div>
     </details>
   </article>
@@ -104,14 +105,12 @@
       <div class="more">
         <h4>Why I built it</h4>
         <p>I wanted curiosity to be the way in: no search box, no syllabus, just "what's that?" and a tap. It's also where I practised taking a product from idea to launch and talking about it in public. The direction is a one-stop place to learn a topic, with articles first, then research papers, then video.</p>
-        <h4>What it does</h4>
-        <ul>
-          <li>Each world is built from one Wikipedia article, and every orb in it is an article it links to. Tap to read, or dive in to land in that world.</li>
-          <li>A daily challenge gives you a hidden goal to reach in as few worlds as you can. A scheduled job publishes each day's route, and share links let a friend play or try to beat your result.</li>
-          <li>Research papers appear as a second kind of orb, pulled from OpenAlex, with authors, citation counts and open-access badges.</li>
-          <li>A notebook lets you pin tiles, papers and passages with your notes and the trail that led you there. It formats APA, MLA and Harvard references and exports to Word, PDF or Google Docs. It saves on your device, with no sign-up.</li>
-          <li>Any topic is a shareable link, and the interface works in six languages.</li>
-        </ul>
+        <h4>Data and APIs</h4>
+        <p>Each world is generated live from one Wikipedia article: its outgoing links become the orbs, with pictures and summaries fetched from the Wikipedia APIs. Research papers come from OpenAlex's open API and carry authors, citation counts and open-access status. The app installs as a web app. A network-first service worker means updates appear on the very next open, and the app itself still opens with no signal.</p>
+        <h4>Automation</h4>
+        <p>The daily challenge is automated end to end. A nightly GitHub Action runs the real app in a headless browser, builds the next two weeks of routes through the link graph and commits each as a data file, so everyone gets the same challenge. A seeded fallback covers any missing day. Share links carry the start, goal and difficulty, so a friend can play or try to beat your result.</p>
+        <h4>The research notebook</h4>
+        <p>Pin tiles, papers and passages with your notes and the trail that led you there. It formats APA, MLA and Harvard references and exports to Word, PDF or Google Docs. It saves on the device with no sign-up, so there's no personal data to look after. Topics are deep links, and the interface runs in six languages.</p>
       </div>
     </details>
   </article>
@@ -131,15 +130,13 @@
         <div class="more">
           <h4>Why I'm building it</h4>
           <p>Most reporting tools end the moment you hit submit. I wanted a public record that carries on, so a problem can't quietly disappear.</p>
-          <h4>What it does</h4>
-          <ul>
-            <li>A resident drops a pin on the map and reports an issue, with photos. Its location routes it to the right authority.</li>
-            <li>Other residents confirm it's still a problem. Every status change is kept in a public history, with comments, followers and moderation tools behind it.</li>
-            <li>Privacy by design: residents show as a first name and postcode district only.</li>
-            <li>Geography and authority routing are generic, so the second council is configuration, not a rebuild.</li>
-            <li>Independent: not a council site, and it publishes no council response unless a verified authority provides it.</li>
-          </ul>
-        </div>
+          <h4>Data model</h4>
+          <p>A relational Postgres schema covers authorities, wards, postcodes, infrastructure assets, issues, photos, confirmations, comments, followers, notifications and moderation actions. Every status change is written to a history table, so an issue's whole life is auditable. Row-level security controls who can see and change what.</p>
+          <h4>Geographic routing and open data</h4>
+          <p>Locations are stored as PostGIS geography points with spatial indexes, and a database function resolves each report to the right authority. I'm currently replacing the starter boundaries with real local-authority boundary data. Importers load open datasets, such as NaPTAN bus stops and green-space data, as assets a report can attach to. Geography is generic by design, so adding a second council is configuration, not a rebuild.</p>
+          <h4>Community verification</h4>
+          <p>Residents confirm an issue is still a problem, which keeps stale reports honest and surfaces what matters most. Residents appear as a first name and postcode district only. It's independent: not a council site, and it publishes no council response unless a verified authority provides it.</p>
+      </div>
       </details>
     </article>
 
@@ -158,8 +155,8 @@
           <h4>Why I built it</h4>
           <p>Product videos are slow to make by hand and impossible to repeat exactly. I wanted launch videos for my own builds that I could redo in minutes whenever the product changed.</p>
           <h4>What it does</h4>
-          <p>It drives the running app over the Chrome DevTools Protocol on a virtual clock, so every take is identical. It measures the voiceover lines, times them to the footage and composes the edit in code. It made the launch assets for both Lighthouse and Rabbit Hole.</p>
-        </div>
+          <p>A script drives the running app over the Chrome DevTools Protocol on a virtual clock, so every take is identical and every frame is captured. It measures the voiceover lines, times them to the footage and composes the edit as code with Remotion, then encodes with FFmpeg. It made the launch assets for both Lighthouse and Rabbit Hole.</p>
+      </div>
       </details>
     </article>
   </div>
@@ -170,7 +167,7 @@
     <div class="card-top">
       <p class="kicker">Personal project</p>
       <h3>VOLT</h3>
-      <p>A training and nutrition app we built together for our own routines. It reads the notes I leave on each set and uses them to plan the following week. It balances food and protein, suggests meals to choose from, writes out the full recipe, and fills our online shopping basket. We check it and authorise the payment ourselves.</p>
+      <p>A training and nutrition app we built together for our own routines. It logs every set and reads the notes I leave on it, then uses that data, with my weight trend against the plan, to adjust the following week. It balances calories and protein against targets, suggests meals to choose from, writes out the full recipe and fills our online shopping basket. We check it and authorise the payment ourselves.</p>
       <p>I build small tools like this around my own life because it's the fastest way I know to keep learning how AI, data and automation fit together.</p>
       <p class="built"><b>Built with</b><span>Claude artifact</span><span>JavaScript</span><span>Claude AI coach</span><span>On-device storage</span></p>
     </div>
