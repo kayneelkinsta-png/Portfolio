@@ -116,6 +116,8 @@ details[open] summary::before { transform: rotate(45deg); }
 
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .two > .card, .two > .sector { margin-bottom: 0; }
+.three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.three > .sector { margin-bottom: 0; }
 
 /* sectors */
 .sector { background: rgba(20, 70, 60, .07); border-radius: 24px; padding: 1.75rem; margin-bottom: 1.5rem; }
@@ -173,7 +175,7 @@ details[open] summary::before { transform: rotate(45deg); }
 @media (max-width: 760px) {
   section { padding-top: 3.5rem; }
   .quotes { columns: 1; }
-  .two, .sector.big, .why-grid { grid-template-columns: 1fr; }
+  .two, .three, .sector.big, .why-grid { grid-template-columns: 1fr; }
   .why-grid { gap: 1.75rem; }
   .photo { position: static; max-width: 260px; }
   .timeline li { grid-template-columns: 1fr; gap: .1rem; }
