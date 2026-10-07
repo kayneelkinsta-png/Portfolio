@@ -78,8 +78,8 @@ section { padding: 5rem 0 1rem; }
 .card.mint { background: var(--mint); }
 .card.blue { background: var(--blue); }
 .card.side { display: block; }
-.side-shot { display: block; width: 100%; height: 340px; margin: 0 0 1.4rem; object-fit: cover; object-position: top; border-radius: 20px; border: 5px solid var(--dark); box-shadow: 0 12px 28px -14px rgba(20, 70, 60, .5); }
-@media (max-width: 760px) { .side-shot { height: 280px; } }
+.side-shot { display: block; width: 100%; height: 180px; margin: 0 0 1.2rem; object-fit: cover; object-position: top; border-radius: 20px; border: 5px solid var(--dark); box-shadow: 0 12px 28px -14px rgba(20, 70, 60, .5); }
+@media (max-width: 760px) { .side-shot { height: 220px; } }
 .card.ink { background: var(--dark); color: #f3efe6; }
 .card-top { max-width: 46em; }
 .card-top p { font-size: 1.05rem; }
@@ -111,7 +111,7 @@ details[open] summary::before { transform: rotate(45deg); }
 .ink .built span { background: rgba(255, 255, 255, .12); }
 .card .built + details { margin-top: 1.1rem; }
 
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .two > .card, .two > .sector { margin-bottom: 0; }
 
 /* sectors */
