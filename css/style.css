@@ -77,8 +77,8 @@ section { padding: 5rem 0 1rem; }
 .card.peach { background: var(--peach); }
 .card.mint { background: var(--mint); }
 .card.blue { background: var(--blue); }
-.card.side { margin-top: 1.5rem; display: grid; grid-template-columns: 130px 1fr; gap: 2rem; align-items: center; }
-.side-shot { width: 130px; height: 190px; object-fit: cover; object-position: top; border-radius: 16px; border: 4px solid var(--dark); box-shadow: 0 10px 24px -14px rgba(20, 70, 60, .5); }
+.card.side { display: block; }
+.side-shot { display: block; margin-bottom: 1.25rem; width: 130px; height: 190px; object-fit: cover; object-position: top; border-radius: 16px; border: 4px solid var(--dark); box-shadow: 0 10px 24px -14px rgba(20, 70, 60, .5); }
 @media (max-width: 760px) { .card.side { grid-template-columns: 1fr; gap: 1.25rem; } .side-shot { width: 110px; height: 160px; } }
 .card.ink { background: var(--dark); color: #f3efe6; }
 .card-top { max-width: 46em; }
