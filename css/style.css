@@ -61,7 +61,7 @@ section { padding: 5rem 0 1rem; }
 .hero { padding-top: 5.5rem; text-align: center; }
 .hero .lede { margin: 2rem auto 0; color: var(--ink-2); }
 
-.seeking { display: inline-block; margin: 1.75rem auto 0; padding: .55rem 1.1rem; border: 2px solid var(--coral); border-radius: 99px; font-weight: 500; color: var(--ink); background: rgba(240, 103, 74, .08); }
+.seeking { display: inline-block; margin: 1.75rem auto 0; padding: .8rem 1.4rem; max-width: 38em; text-align: center; line-height: 1.55; border: 2px solid var(--coral); border-radius: 26px; font-weight: 500; color: var(--ink); background: rgba(240, 103, 74, .08); }
 .seeking b { color: var(--coral); margin-right: .35rem; font-weight: 700; }
 
 /* why */
