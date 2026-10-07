@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261007s">
+<link rel="stylesheet" href="css/style.css?v=20261007t">
 </head>
 <body>
 
@@ -147,9 +147,9 @@
     <article class="card blue reveal side">
       <img class="side-shot" src="assets/volt-workout.png" width="1120" height="2080" alt="VOLT's workout screen on a phone: Legs and core, with the squat's sets, reps and weight boxes ready to log." loading="lazy">
       <div class="card-top">
-        <p class="kicker">Personal project</p>
+        <p class="kicker">Personal project · ordering in build</p>
         <h3>VOLT</h3>
-        <p>A training and nutrition platform I use for my own workouts and meals, built as a closed data loop. It ingests every logged workout set and its notes, syncs weekly body-composition readings from my smart scales, and turns them into actionable progress reports and the next week's plan. It balances calories and protein against targets, suggests meals to choose from, writes out the full recipe and fills my online shopping basket. I check it and authorise the payment myself.</p>
+        <p>A training and nutrition platform I use for my own workouts and meals, built as a closed data loop. It ingests every logged workout set and its notes, syncs weekly body-composition readings from my smart scales, and turns them into actionable progress reports and the next week's plan. It balances calories and protein against targets and suggests meals to choose from, with full recipes. I'm now building the last step: turning the chosen meals into a suggested food order and recommending where to buy it.</p>
         <p>I build small tools like this around my own life because it's the fastest way I know to keep learning how AI, data and automation fit together.</p>
         <p class="built"><b>Built with</b><span>Claude artifact</span><span>JavaScript</span><span>Claude AI coach</span><span>Smart-scale sync</span><span>On-device storage</span></p>
       </div>
@@ -164,8 +164,10 @@
           <p>Readings are stored as time series, so it compares a trend against the plan rather than reacting to one weigh-in.</p>
           <h4>The learning loop</h4>
           <p>The set notes and the body-composition trend go to an AI coach, which adjusts the following week's training. It reads my notes on each set as data, and uses them to decide what to change.</p>
-          <h4>Automation and integrations</h4>
-          <p>It balances calories and protein, suggests meals to choose from, writes out the full recipe for each, and fills my online shopping basket with the ingredients. A human-approval step sits at the end: I check the basket and authorise the payment myself.</p>
+          <h4>Nutrition engine</h4>
+          <p>It balances calories and protein against daily targets, suggests meals to choose from, and writes out the full recipe for each one I pick.</p>
+          <h4>In build: ordering and price comparison</h4>
+          <p>The next layer links the chosen meals to my online shopping basket as a suggested food order. Ingredients are consolidated across recipes and matched to pack sizes, then handed to the retailer's basket as a draft. A price-comparison step prices the full basket across supermarkets and recommends where to shop. A human-approval step stays at the end: I review the basket and authorise the payment myself. This part is still being built and isn't live yet.</p>
           <h4>Reporting</h4>
           <p>Each week it turns the scale data and the training log into a progress report: what changed in weight, body fat, muscle mass and hydration, how that compares with the plan, and what to do next. There's also a countdown to my goal date.</p>
           <p class="small">My logs are stored on my device.</p>
@@ -293,6 +295,6 @@
   <p>© 2026 Kayne Elkins. Lighthouse screenshots use invented demo data. Rabbit Hole content comes from Wikipedia (CC BY-SA 4.0) and OpenAlex.</p>
 </footer>
 
-<script src="js/main.js?v=20261007s"></script>
+<script src="js/main.js?v=20261007t"></script>
 </body>
 </html>
