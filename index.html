@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kayne Elkins · Recruiter who builds</title>
+<meta name="description" content="Twelve years of global technical recruitment, plus the AI-assisted tools I've designed and shipped.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Kayne Elkins · Recruiter who builds">
+<meta property="og:description" content="Twelve years of global technical recruitment, plus the AI-assisted tools I've designed and shipped.">
+<meta property="og:image" content="assets/nimbus-aurora.png">
+<meta name="theme-color" content="#ede7de">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- the little sparkle that follows you down the page -->
+<div class="buddy" aria-hidden="true">
+  <svg viewBox="0 0 40 40"><path d="M20 0c1.6 10.4 9.6 18.4 20 20-10.4 1.6-18.4 9.6-20 20-1.6-10.4-9.6-18.4-20-20C10.4 18.4 18.4 10.4 20 0Z"/></svg>
+</div>
+
+<header class="top">
+  <nav class="pills" aria-label="Sections">
+    <a href="#top" class="on">Hello</a>
+    <a href="#why">Why</a>
+    <a href="#work">Work</a>
+    <a href="#sectors">Sectors</a>
+    <a href="#kind-words">Kind words</a>
+    <a href="#contact">Contact</a>
+    <a href="https://github.com/kayneelkinsta-png" rel="noopener" target="_blank">GitHub ↗</a>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero wrap" data-buddy="coral">
+  <h1>Hi. I'm Kayne.<br>A recruiter who builds.</h1>
+  <p class="lede">Twelve years finding engineers, data and security people for some of the hardest-to-hire places around. Lately I've been building the tools I always wished I had.</p>
+</section>
+
+<section id="why" class="wrap why" data-buddy="lilac">
+  <h2>Why I started building</h2>
+  <div class="why-grid">
+  <figure class="photo" id="photo">
+    <img src="assets/kayne.jpg" width="800" height="800" alt="Kayne smiling, with a city skyline lit up at night behind him." onerror="document.getElementById('photo').hidden=true">
+  </figure>
+  <div class="prose">
+    <p>For most of my career the tools I used belonged to someone else. A search box here, a spreadsheet there, a lot of tabs open at once.</p>
+    <p>Somewhere along the way I got curious about what sits underneath. How does a funding announcement become a hiring signal? What would it take for a job board, a company registry and my inbox to actually talk to each other? Could sourcing be something I design, not just something I do?</p>
+    <p>So I started learning by building. AI sourcing, integrations, data modelling and automation are the parts of recruitment I find most interesting right now, and I'd rather understand them properly than watch from the sidelines.</p>
+    <p>I work with an AI coding assistant as my engineer. I decide what gets built, how it should behave and what it must never do. Then I read it, test it and send it back until it's right.</p>
+    <p>I'm still learning, and I like it that way. Every project here has made me better at talking to engineers about the roles I'm hiring for.</p>
+  </div>
+  </div>
+</section>
+
+<section id="work" class="wrap" data-buddy="blue">
+  <h2>What I've built</h2>
+
+  <!-- NIMBUS -->
+  <article class="card lilac reveal">
+    <div class="card-top">
+      <p class="kicker">Talent intelligence</p>
+      <h3>Lighthouse</h3>
+      <p>A hub that spots companies under hiring pressure before they advertise a role, finds contract roles for me, and drafts the outreach. Nothing gets sent until I've read it and approved it.</p>
+    </div>
+    <img class="card-img" src="assets/nimbus-aurora.png" width="1200" height="627" alt="The Lighthouse hub: four glowing orbs labelled Leads, Scout, Data and Outreach." loading="lazy">
+    <details>
+      <summary>More about Lighthouse</summary>
+      <div class="more">
+        <p>The best technical recruiting happens before the requisition exists. I used to do that by hand: reading funding news, watching careers pages, spotting who was about to have more roles than recruiters. Lighthouse does the legwork so I can spend the time on judgement.</p>
+        <ul>
+          <li><strong>Leads</strong> scores companies on how many open technical roles each in-house recruiter is carrying, how fast hiring is accelerating, recent funding and geographic spread.</li>
+          <li><strong>Scout</strong> finds contract and permanent roles across six sources and scores each against my own experience, showing the gaps as well as the matches.</li>
+          <li><strong>Outreach</strong> drafts from a lead's own data. I approve, then it sends from my mailbox and tracks replies.</li>
+          <li><strong>Data</strong> reports on its own records: freshness, rate limits, response rates, rejection reasons.</li>
+        </ul>
+        <p>Some decisions I'm proud of: every lead carries the argument against it. Every panel shows how old its data is. It never invents a contact and never guesses a day rate. It doesn't scrape LinkedIn.</p>
+        <img src="assets/nimbus-architecture.png" width="1080" height="1350" alt="Layered architecture diagram: sources, ingest adapters, normalised schema, cache, snapshots and event log, scoring, outreach and scout, WebGL hub and Claude assistant." loading="lazy">
+        <p class="small">The repository is private because it holds real search data. A demo mode runs on invented data and I'm happy to walk you through it live.</p>
+        <p class="chips"><span>Next.js</span><span>TypeScript</span><span>WebGL</span><span>Redis</span><span>Claude API</span><span>Gmail API</span><span>Vercel</span><span>200+ tests</span></p>
+      </div>
+    </details>
+  </article>
+
+  <!-- RABBIT HOLE -->
+  <article class="card ink reveal">
+    <div class="card-top">
+      <p class="kicker">Live product</p>
+      <h3>Rabbit Hole</h3>
+      <p>Wikipedia as worlds you can fall into. Every article is a world, every orb is a real article it links to. Dive in, or play the daily challenge and reach a hidden goal in as few worlds as you can.</p>
+      <p><a class="link" href="https://kayneelkinsta-png.github.io/Rabbit-Hole/" rel="noopener" target="_blank">Try it ↗</a></p>
+    </div>
+    <img class="card-img portrait" src="assets/rabbit-hole.jpg" width="1080" height="1350" alt="Rabbit Hole showing the world for Chocolate: a circle of orbs, each a linked Wikipedia article with a picture." loading="lazy">
+    <details>
+      <summary>More about Rabbit Hole</summary>
+      <div class="more">
+        <ul>
+          <li>A daily challenge with a streak, and share links that let a friend play or try to beat your result.</li>
+          <li>Research papers appear as a second kind of orb, with authors, citation counts and open-access badges.</li>
+          <li>A notebook where you pin tiles, papers and passages with your notes and the trail that led you there. It formats APA, MLA and Harvard references and exports to Word, PDF or Google Docs. It saves on your device, with no sign-up.</li>
+          <li>Any topic is a shareable link, and the interface works in six languages.</li>
+        </ul>
+        <p>It's where I practised taking a product from idea to launch and talking about it in public.</p>
+        <p class="chips"><span>JavaScript</span><span>three.js</span><span>Wikipedia API</span><span>OpenAlex</span><span>PWA</span><span>GitHub Pages + Actions</span></p>
+      </div>
+    </details>
+  </article>
+
+  <div class="two">
+    <!-- CIVICLENS -->
+    <article class="card peach reveal">
+      <div class="card-top">
+        <p class="kicker">In build</p>
+        <h3>CivicLens</h3>
+        <p>A map-first platform for reporting local problems with public infrastructure. Residents can confirm an issue is <em>still a problem</em>, so it can't quietly disappear. Starting in Southampton, designed to work for any UK council.</p>
+      </div>
+      <p class="big-line">See it. Report it. Confirm it. Track it.</p>
+      <details>
+        <summary>More about CivicLens</summary>
+        <div class="more">
+          <ul>
+            <li>Consumer-grade and map-first, not a council dashboard.</li>
+            <li>Privacy by design: residents show as a first name and postcode district only.</li>
+            <li>Geography and authority routing are generic, so the second council is configuration, not a rebuild.</li>
+            <li>Independent: not a council site, and it publishes no council response unless a verified authority provides it.</li>
+          </ul>
+          <p class="chips"><span>TanStack Start</span><span>React</span><span>Supabase</span><span>Tailwind</span></p>
+        </div>
+      </details>
+    </article>
+
+    <!-- VIDEO PIPELINE -->
+    <article class="card mint reveal">
+      <div class="card-top">
+        <p class="kicker">Automation</p>
+        <h3>Demo-video pipeline</h3>
+        <p>A script that drives my apps in a browser, records every frame, times the narration to the footage and renders the finished video. Same take every time.</p>
+      </div>
+      <p class="big-line">Code in. Video out.</p>
+      <details>
+        <summary>More about the pipeline</summary>
+        <div class="more">
+          <p>It drives the running app over the Chrome DevTools Protocol on a virtual clock, measures the voiceover lines, and composes the edit in code. It made the launch assets for both Lighthouse and Rabbit Hole.</p>
+          <p class="chips"><span>Node</span><span>Remotion</span><span>FFmpeg</span><span>Chrome DevTools</span></p>
+        </div>
+      </details>
+    </article>
+  </div>
+</section>
+
+<section id="sectors" class="wrap" data-buddy="green">
+  <h2>Where I've recruited</h2>
+  <p class="sub">Places where hiring is held back by security, regulation or scarcity, and where good process matters as much as speed.</p>
+
+  <article class="sector big reveal">
+    <h3>Defence &amp; national security</h3>
+    <div>
+      <p>Led recruitment delivery across about half of the central government recruitment portfolio at BAE Digital Intelligence, in SC-cleared and clearable talent markets.</p>
+      <p><strong>340+ hires</strong> against a target of 200. Around 50 live requisitions across cyber, data, cloud, software engineering, architecture and machine learning, for clients including FCDO, HMPO, UKHSA and DfE.</p>
+      <p>I'm used to long vetting lead times, small candidate pools and the discretion the work needs. Lighthouse is designed around the controls a security-conscious employer expects: a human approves every send, every contact traces to a source, every action is logged.</p>
+    </div>
+  </article>
+  <div class="two">
+    <article class="sector reveal">
+      <h3>Pharma &amp; life sciences</h3>
+      <p>Global lead technical recruiter on a six-year transformation programme. 25 to 30 live requisitions across 9 countries, Consultant to Director. Time-to-hire down from 60+ to under 40 days.</p>
+    </article>
+    <article class="sector reveal">
+      <h3>Banking &amp; financial services</h3>
+      <p>Lead technology recruiter in a regulated UK bank. 60+ concurrent vacancies, agency and budget governance, and hiring-manager training on structured interviewing and bias.</p>
+    </article>
+  </div>
+</section>
+
+<section id="kind-words" class="wrap" data-buddy="lilac">
+  <h2>Kind words from people I've hired</h2>
+  <p class="sub">Recommendations from candidates I've placed, in their own words, from my LinkedIn.</p>
+
+  <div class="quotes">
+    <figure class="quote reveal lilac">
+      <blockquote><p>Working with Kayne during a recent application was a breath of fresh-air. Kayne's open, friendly, honest approach to conversations, along with his prompt and open feedback made the interview process a genuinely pleasant experience. He clearly had control of the interview process, ensuring next-steps and feedback was always present. I've already personally recommended a close friend to have a conversation with Kayne, knowing it will be a constructive, helpful experience. Thanks again Kayne, and wishing you every success.</p></blockquote>
+      <figcaption><span class="av">AP</span><span><strong>Alex Pearson</strong>Enterprise Cloud Architect at Google</span></figcaption>
+    </figure>
+
+    <figure class="quote reveal mint">
+      <blockquote><p>I've been working in the IT industry for nearly 25 years now and without a doubt Kayne is the best recruiter I've had the pleasure to work with!! He's very approachable, professional, efficient and quick in getting back to you which makes the whole interview process experience that much better. He also has very good all-round technical knowledge on cloud providers and would be an asset to any company.</p></blockquote>
+      <figcaption><span class="av">KA</span><span><strong>Karim Amarsi</strong>Cloud Architect · AI Safety · AWS Security</span></figcaption>
+    </figure>
+
+    <figure class="quote reveal peach">
+      <blockquote><p>Kayne is a brilliant Data &amp; Software recruitment consultant who understands the need of employers and how to support candidates through their recruitment process. Kayne provides timely and truthful information at every stage hereby enhancing candidate's confidence. I highly recommend Kayne, if you are looking at getting into Data roles.</p></blockquote>
+      <figcaption><span class="av">OO</span><span><strong>Olu O. Ph.D</strong>Senior Data &amp; AI Engineer</span></figcaption>
+    </figure>
+
+    <figure class="quote reveal blue">
+      <blockquote><p>Kayne represented me in my last job opportunity. He is a strong technical recruiter that speaks the architects jargon and has the industry standards and technology concepts very clear. With outstanding leadership he orchestrated an organized and fast interviews pipeline composed by four meetings, providing me also constant feedback after each session and finally with absolute transparency he watched over both parties interests creating the perfect fit. Other than that I found him a very kind and insightful guy that gives good advises. Certainly I would love to deal with him again. Thank you Kayne.</p></blockquote>
+      <figcaption><span class="av">GC</span><span><strong>Gon C</strong>Principal Consultant, Data</span></figcaption>
+    </figure>
+
+    <figure class="quote reveal lilac">
+      <blockquote><p>Kayne is the best recruiter I have dealt with. Incredibly talented, never misses a follow-up call. and a genuine pleasure to work with. Highly recommended.</p></blockquote>
+      <figcaption><span class="av">ER</span><span><strong>Eugene Romancenko</strong>Principal DevOps &amp; Platform Engineering Leader</span></figcaption>
+    </figure>
+
+    <figure class="quote reveal mint">
+      <blockquote><p>Working with Kayne was a pleasure. The whole process was seamless with no unknown variables. He provided all the needed information and run me through the interview process giving me tips and useful advices. He had the time to schedule video meetings and made sure that I was up to date whenever something new came up. You can recognise professionalism when no meeting feels like time wasted.</p></blockquote>
+      <figcaption><span class="av">VB</span><span><strong>Vlad Blaj</strong>Tech lead at DoiT International</span></figcaption>
+    </figure>
+  </div>
+
+  <details class="more-quotes">
+    <summary>More recommendations</summary>
+    <div class="quotes">
+      <figure class="quote peach">
+        <blockquote><p>Kayne is an exceptional people person. He works with absolute honesty / transparency when it come to opportunities for candidate. Post securing an offer at DoIT international, he ensured that my onboarding with them went smoothly. If you want an exceptional outcome driven person for recruitment or related services then Kayne is the person to get in touch with.</p></blockquote>
+        <figcaption><span class="av">GR</span><span><strong>Gurumoorthy Raghupathy</strong>Platform Engineering · GitOps · DevSecOps · SRE</span></figcaption>
+      </figure>
+      <figure class="quote blue">
+        <blockquote><p>Kayne was a joy to work with throughout my recruitment process for my upcoming role. He was extremely transparent throughout the recruitment process and was very keen to answer all of my questions too, even after I had accepted the offer! I'd definitely recommend Kayne to anyone looking for a new role in the Tech / Data world, as he is a committed professional who will always do the best job for his clients!</p></blockquote>
+        <figcaption><span class="av">MR</span><span><strong>Matthew Richardson</strong>Deputy Manager at Bet365</span></figcaption>
+      </figure>
+      <figure class="quote lilac">
+        <blockquote><p>Working with Kayne has been an absolute pleasure, during our meetings he's been asking the right questions to gather all the requirements for the jobs he's been working on. He's always kept in contact with me to understand what candidates were a good fit and which ones weren't and very catch-up we had brought value to the search. He also made sure to gather feedback from hiring managers on tasks and interviews ensuring a great candidate experience too. I would definitely work with Kayne again and I thank him so much for all his help.</p></blockquote>
+        <figcaption><span class="av">GB</span><span><strong>Gemma Brito</strong>Talent Acquisition Partner</span></figcaption>
+      </figure>
+      <figure class="quote mint">
+        <blockquote><p>Kayne is very professional and a pleasure to work with. He is very good at sourcing the best opportunities that match my needs and is very attentive to my requirements. Its’s refreshing to see Kayne’s approach to recruitment in this way and I will definitely be reaching out to him when it comes to finding my next role. I cannot recommend him enough!</p></blockquote>
+        <figcaption><span class="av">AA</span><span><strong>Abrar Ali</strong>AWS / GCP / K8S Certified Cloud Platform &amp; DevOps Engineer</span></figcaption>
+      </figure>
+      <figure class="quote peach">
+        <blockquote><p>It was a pleasure to work with Kayne! He was very supportive, and made sure that all my questions and concerns are answered promptly. Facilitated by Kayne, the communication was really smooth, despite the delays on my side.</p></blockquote>
+        <figcaption><span class="av">AB</span><span><strong>Alexander Berezhnoy</strong>Software Engineer at Swarmia</span></figcaption>
+      </figure>
+    </div>
+  </details>
+</section>
+
+<section id="rules" class="wrap" data-buddy="blue">
+  <h2>The rules I build by</h2>
+  <ul class="rules">
+    <li><strong>A person sends.</strong> The assistant can save a draft. Only I can send it.</li>
+    <li><strong>No invented people.</strong> A contact traces to a source or it's labelled a suggestion.</li>
+    <li><strong>Show the counter-argument.</strong> Scores come with reasons and caveats, so they can be challenged.</li>
+    <li><strong>Say how old the data is.</strong> Every panel carries its freshness.</li>
+    <li><strong>Respect platform terms.</strong> No scraping what's off limits; public, documented feeds only.</li>
+    <li><strong>Keep personal data small.</strong> CivicLens shows first names only; Rabbit Hole saves on your device.</li>
+  </ul>
+</section>
+
+<section id="career" class="wrap" data-buddy="peach">
+  <h2>The recruiting behind it</h2>
+  <p class="sub">My CV has the detail. This is the short version.</p>
+  <ul class="timeline">
+    <li><span>Now</span>Global lead technical recruiter and business partner, six-year pharma transformation programme</li>
+    <li><span>2024–25</span>Lead technology recruiter, UK regulated bank</li>
+    <li><span>2022–23</span>Lead technology recruiter, defence and government digital intelligence</li>
+    <li><span>2021–22</span>First EMEA talent acquisition hire at a VC-backed scale-up, headcount 200 to 450 across 19 entities</li>
+    <li><span>2018–20</span>Built a DevOps, cloud and data recruitment practice, including a government tender worth about £1.2m</li>
+    <li><span>2014–18</span>Technology recruitment consultant</li>
+  </ul>
+</section>
+
+<section id="contact" class="wrap contact" data-buddy="coral">
+  <h2>Say hello.</h2>
+  <p class="lede">I'm happy to demo Lighthouse live, talk through how it works, or chat about how a talent team could use any of it.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://calendly.com/kayneelkinsta" rel="noopener" target="_blank">Book a call</a>
+    <a class="btn" href="mailto:KayneElkinsTA@gmail.com">Email</a>
+    <a class="btn" href="https://www.linkedin.com/in/kayneelkins/" rel="noopener" target="_blank">LinkedIn ↗</a>
+    <a class="btn" href="https://github.com/kayneelkinsta-png" rel="noopener" target="_blank">GitHub ↗</a>
+  </div>
+  <p class="small">Most of my work is in private repositories. Rabbit Hole is public on GitHub, and I'm happy to screen-share the rest.</p>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <p>© 2026 Kayne Elkins. Lighthouse screenshots use invented demo data. Rabbit Hole content comes from Wikipedia (CC BY-SA 4.0) and OpenAlex.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
