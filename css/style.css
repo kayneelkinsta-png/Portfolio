@@ -139,10 +139,6 @@ details[open] summary::before { transform: rotate(45deg); }
 .more-quotes summary { margin-bottom: 1.25rem; }
 .more-quotes summary::before { background: var(--green); color: var(--paper); }
 
-/* rules */
-.rules { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; }
-.rules li { padding: 1rem 0; border-top: 2px solid rgba(20, 70, 60, .15); }
-
 /* timeline */
 .timeline { list-style: none; padding: 0; margin: 0; }
 .timeline li { display: grid; grid-template-columns: 6rem 1fr; gap: 1rem; padding: .9rem 0; border-top: 2px solid rgba(20, 70, 60, .15); }
@@ -174,7 +170,6 @@ details[open] summary::before { transform: rotate(45deg); }
 @media (max-width: 760px) {
   section { padding-top: 3.5rem; }
   .quotes { columns: 1; }
-  .two, .rules, .sector.big, .why-grid { grid-template-columns: 1fr; }
   .why-grid { gap: 1.75rem; }
   .photo { position: static; max-width: 260px; }
   .timeline li { grid-template-columns: 1fr; gap: .1rem; }
