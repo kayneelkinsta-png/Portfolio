@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261007an">
+<link rel="stylesheet" href="css/style.css?v=20261007ao">
 </head>
 <body>
 
@@ -30,6 +30,7 @@
     <a href="#top" class="on">Hello</a>
     <a href="#why">Why</a>
     <a href="#work">Work</a>
+    <a href="#pipeline">Pipeline</a>
     <a href="#sectors">Sectors</a>
     <a href="#kind-words">Testimonials</a>
     <a href="#contact">Contact</a>
@@ -172,6 +173,66 @@
   </div>
 </section>
 
+<section id="pipeline" class="wrap" data-buddy="coral">
+  <h2>In the pipeline</h2>
+  <p class="sub">Two things I'm designing next. They're plans, not products yet, and I'll show them here when they run.</p>
+  <div class="two">
+
+    <article class="card plan reveal">
+      <div class="card-top">
+        <p class="kicker">Planned · intake</p>
+        <h3>Spec Check</h3>
+        <p>Before a search starts, it tests whether the job spec is realistic. It splits a spec into must-haves and nice-to-haves, measures how rare each requirement and combination is across live job postings, and compares the pay with the market. It then shows which requirement narrows the market most, and what dropping it would change.</p>
+        <p class="built"><b>Planned stack</b><span>Next.js</span><span>TypeScript</span><span>Claude API</span><span>Job-board feeds</span></p>
+      </div>
+      <details>
+        <summary>How it would work</summary>
+        <div class="more">
+          <h4>Why</h4>
+          <p>Searches are often won or lost at intake. A spec that asks for a market that barely exists costs weeks. I want a hiring manager to see that on day one, with evidence.</p>
+          <h4>What it would do</h4>
+          <ul>
+            <li><strong>Extract.</strong> An LLM turns the spec into structured requirements and separates must-haves from nice-to-haves.</li>
+            <li><strong>Measure rarity.</strong> It counts how often each requirement, and each combination, appears in live postings from the public job-board feeds I already ingest for Lighthouse. A rare combination means a narrow market.</li>
+            <li><strong>Check the pay.</strong> It compares the offered range with advertised salaries and official earnings data.</li>
+            <li><strong>Test changes.</strong> It re-scores the spec with a requirement dropped, to show what would widen the market.</li>
+            <li><strong>Brief.</strong> A feasibility score with its reasons and caveats, and a one-page intake brief for the hiring manager conversation.</li>
+          </ul>
+          <h4>Honest limits</h4>
+          <p>No open source says how many people hold a given skill, so it estimates rarity from market postings, not headcounts, and says so. It needs no candidate data.</p>
+        </div>
+      </details>
+    </article>
+
+    <article class="card plan reveal">
+      <div class="card-top">
+        <p class="kicker">Planned · offer and contract</p>
+        <h3>Offer Desk</h3>
+        <p>Turns an agreed package into an offer letter and a contract draft, using country-specific rules. Starting with three countries, it checks clauses against local rules, compares pay with local bands, and keeps every version and approval in a log. A human signs off. It's a drafting aid, not legal advice.</p>
+        <p class="built"><b>Planned stack</b><span>Next.js</span><span>TypeScript</span><span>Claude API</span><span>Versioned templates</span><span>Event log</span></p>
+      </div>
+      <details>
+        <summary>How it would work</summary>
+        <div class="more">
+          <h4>Why</h4>
+          <p>Offers and contracts are where a good process can still go wrong: the wrong notice period, a missing clause, a pay figure that doesn't fit the market. A rules layer can catch these before a human signs off.</p>
+          <h4>What it would do</h4>
+          <ul>
+            <li><strong>Rule sets.</strong> Curated, cited rules per country for notice, probation, holiday, working time and relocation, starting with three countries.</li>
+            <li><strong>Drafting.</strong> The agreed package becomes an offer letter and a contract from versioned templates.</li>
+            <li><strong>Checks.</strong> Clauses are flagged against the local rules, and the pay is compared with local bands.</li>
+            <li><strong>Control.</strong> A human approves, and every version and change is logged.</li>
+          </ul>
+          <h4>Honest limits</h4>
+          <p>It's a drafting aid, not legal advice. The rules need a legal or HR check before anyone relies on them, and the demo would use made-up candidates.</p>
+        </div>
+      </details>
+    </article>
+
+  </div>
+  <p class="small plan-note">Both would plug into a mock applicant tracking system with a shared event log, an approval step and an API, built on made-up data and labelled as such.</p>
+</section>
+
 <section id="sectors" class="wrap" data-buddy="green">
   <h2>Where I've recruited</h2>
   <p class="sub">Places where hiring is held back by security, regulation or scarcity, and where good process matters as much as speed.</p>
@@ -294,6 +355,6 @@
   <p>© 2026 Kayne Elkins. Lighthouse screenshots use invented demo data. Rabbit Hole content comes from Wikipedia (CC BY-SA 4.0) and OpenAlex.</p>
 </footer>
 
-<script src="js/main.js?v=20261007an"></script>
+<script src="js/main.js?v=20261007ao"></script>
 </body>
 </html>
