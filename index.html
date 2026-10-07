@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261007n">
+<link rel="stylesheet" href="css/style.css?v=20261007p">
 </head>
 <body>
 
@@ -149,23 +149,26 @@
       <div class="card-top">
         <p class="kicker">Personal project</p>
         <h3>VOLT</h3>
-        <p>A training and nutrition app I use for my own workouts and meals. It logs every set and reads the notes I leave on it, then uses that data, with my weight trend against the plan, to adjust the following week. It balances calories and protein against targets, suggests meals to choose from, writes out the full recipe and fills my online shopping basket. I check it and authorise the payment myself.</p>
+        <p>A training and nutrition platform I use for my own workouts and meals, built as a closed data loop. It ingests every logged set and its notes, syncs weekly body-composition readings from my smart scales, and turns them into actionable progress reports and the next week's plan. It balances calories and protein against targets, suggests meals to choose from, writes out the full recipe and fills my online shopping basket. I check it and authorise the payment myself.</p>
         <p>I build small tools like this around my own life because it's the fastest way I know to keep learning how AI, data and automation fit together.</p>
-        <p class="built"><b>Built with</b><span>Claude artifact</span><span>JavaScript</span><span>Claude AI coach</span><span>On-device storage</span></p>
+        <p class="built"><b>Built with</b><span>Claude artifact</span><span>JavaScript</span><span>Claude AI coach</span><span>Smart-scale sync</span><span>On-device storage</span></p>
       </div>
       <details>
         <summary>How it works</summary>
         <div class="more">
           <h4>Why I built it</h4>
           <p>I wanted my training, my food and the weekly shop in one place, with a plan that adjusts to what I actually do instead of what I'd planned to do. It's the same idea as my recruitment work: capture the data, spot the pattern, act on it.</p>
-          <h4>What it does</h4>
-          <ul>
-            <li><strong>Logging.</strong> Every set records weight, reps and a note, with last week's numbers alongside, a rest timer, a plate calculator, and swap and superset options when a machine is busy.</li>
-            <li><strong>The learning loop.</strong> The set notes and my weight trend against the plan feed an AI coach, which adjusts the following week's training.</li>
-            <li><strong>Nutrition.</strong> Daily targets for calories, protein, water and steps. It suggests meals to choose from, writes out the full recipe for each, and fills my online shopping basket with the ingredients. I check it and authorise the payment myself.</li>
-            <li><strong>Progress.</strong> A progress view and a countdown to my goal date show whether the plan is working.</li>
-          </ul>
-          <p class="small">Everything is stored on my device.</p>
+          <h4>Ingestion</h4>
+          <p>Three streams feed it. Every set records weight, reps and a free-text note, with last week's numbers shown alongside. Daily nutrition and activity are logged against targets for calories, protein, water and steps. And my smart scales sync weekly readings of body weight, body fat %, muscle mass % and water content.</p>
+          <h4>Data model and trends</h4>
+          <p>Readings are stored as time series, so it compares a trend against the plan rather than reacting to one weigh-in.</p>
+          <h4>The learning loop</h4>
+          <p>The set notes and the body-composition trend go to an AI coach, which adjusts the following week's training. It reads my notes on each set as data, and uses them to decide what to change.</p>
+          <h4>Automation and integrations</h4>
+          <p>It balances calories and protein, suggests meals to choose from, writes out the full recipe for each, and fills my online shopping basket with the ingredients. A human-approval step sits at the end: I check the basket and authorise the payment myself.</p>
+          <h4>Reporting</h4>
+          <p>Each week it turns the scale data and the training log into a progress report: what changed in weight, body fat, muscle mass and hydration, how that compares with the plan, and what to do next. There's also a countdown to my goal date.</p>
+          <p class="small">My logs are stored on my device.</p>
         </div>
       </details>
     </article>
@@ -290,6 +293,6 @@
   <p>© 2026 Kayne Elkins. Lighthouse screenshots use invented demo data. Rabbit Hole content comes from Wikipedia (CC BY-SA 4.0) and OpenAlex.</p>
 </footer>
 
-<script src="js/main.js?v=20261007n"></script>
+<script src="js/main.js?v=20261007p"></script>
 </body>
 </html>
