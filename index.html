@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261007z">
+<link rel="stylesheet" href="css/style.css?v=20261007aa">
 </head>
 <body>
 
@@ -68,7 +68,7 @@
     <div class="card-top">
       <p class="kicker">Talent intelligence</p>
       <h3>Lighthouse</h3>
-      <p>A dashboard I designed and built around my own contract search, tuned to the exact titles, markets and day rates I'm after. Contracting is a competitive market, and by the time a role is advertised everyone else has seen it too. So Lighthouse spots companies under hiring pressure before they advertise a role, finds contract roles that fit me, and drafts the outreach. Nothing gets sent until I've read it and approved it.</p>
+      <p>A dashboard I designed and built around my own job search, tuned to the exact titles, markets and pay I'm after, for permanent and contract roles alike. The market is competitive, and by the time a role is advertised everyone else has seen it too. So Lighthouse spots companies under hiring pressure before they advertise a role, finds permanent and contract roles that fit me, and drafts the outreach. Nothing gets sent until I've read it and approved it.</p>
     </div>
     <img class="card-img" src="assets/nimbus-aurora.png" width="1200" height="627" alt="The Lighthouse hub: four glowing orbs labelled Leads, Scout, Data and Outreach." loading="lazy">
     <p class="built"><b>Built with</b><span>Next.js</span><span>TypeScript</span><span>WebGL</span><span>Redis</span><span>Claude API</span><span>Gmail API</span><span>Vercel</span><span>200+ tests</span></p>
@@ -78,11 +78,11 @@
         <h4>Why I built it</h4>
         <p>The best technical recruiting happens before the requisition exists. I used to do that by hand: reading funding news, watching careers pages, spotting who was about to have more roles than recruiters. Lighthouse turns that routine into a data pipeline, so my time goes on judgement and conversations.</p>
         <h4>Ingestion</h4>
-        <p>One adapter per source, all emitting the same typed schema, so a new source is one file and nothing else changes. Signals come from SEC Form D filings, Companies House share-allotment records, funding-news feeds and the public job-board APIs of the major applicant tracking systems (Greenhouse, Lever, Ashby, SmartRecruiters and others). Contract roles come from six job-board and alert sources. Every request has timeouts, retries and backoff, and any source can fail without taking the rest down.</p>
+        <p>One adapter per source, all emitting the same typed schema, so a new source is one file and nothing else changes. Signals come from SEC Form D filings, Companies House share-allotment records, funding-news feeds and the public job-board APIs of the major applicant tracking systems (Greenhouse, Lever, Ashby, SmartRecruiters and others). Permanent and contract roles come from six job-board and alert sources. Every request has timeouts, retries and backoff, and any source can fail without taking the rest down.</p>
         <h4>Data model</h4>
         <p>Records are resolved to a single company entity, cached in Redis under versioned keys, and snapshotted daily. Two readings of a careers page tell you size; a run of snapshots tells you direction, so Lighthouse tracks hiring velocity, not just headcount. Every action is written to an event log.</p>
         <h4>Scoring</h4>
-        <p>Pure, unit-tested functions weight four signals: capacity gap (open technical roles per in-house recruiter, 45%), hiring acceleration (25%), funding recency and size (20%) and geographic spread (10%). Small teams are suppressed so the feed isn't noise, and every score ships with its reasons and its caveats. A second model scores each contract role against an evidence bank of my own experience, using a skills taxonomy, and shows the gaps as well as the matches.</p>
+        <p>Pure, unit-tested functions weight four signals: capacity gap (open technical roles per in-house recruiter, 45%), hiring acceleration (25%), funding recency and size (20%) and geographic spread (10%). Small teams are suppressed so the feed isn't noise, and every score ships with its reasons and its caveats. A second model scores each role, permanent or contract, against an evidence bank of my own experience, using a skills taxonomy, and shows the gaps as well as the matches.</p>
         <h4>Automation and integrations</h4>
         <p>A tool-calling assistant sits across the data and can query leads and roles, draft outreach and log rejections. It cannot send. Drafts go through a human approval step, then out through the Gmail API with OAuth, and replies are matched back to the thread. Scheduled jobs keep the caches warm, and voice input and output run through speech APIs.</p>
         <h4>Measuring progress</h4>
@@ -292,6 +292,6 @@
   <p>© 2026 Kayne Elkins. Lighthouse screenshots use invented demo data. Rabbit Hole content comes from Wikipedia (CC BY-SA 4.0) and OpenAlex.</p>
 </footer>
 
-<script src="js/main.js?v=20261007z"></script>
+<script src="js/main.js?v=20261007aa"></script>
 </body>
 </html>
