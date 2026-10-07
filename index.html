@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261007t">
+<link rel="stylesheet" href="css/style.css?v=20261007u">
 </head>
 <body>
 
@@ -167,7 +167,16 @@
           <h4>Nutrition engine</h4>
           <p>It balances calories and protein against daily targets, suggests meals to choose from, and writes out the full recipe for each one I pick.</p>
           <h4>In build: ordering and price comparison</h4>
-          <p>The next layer links the chosen meals to my online shopping basket as a suggested food order. Ingredients are consolidated across recipes and matched to pack sizes, then handed to the retailer's basket as a draft. A price-comparison step prices the full basket across supermarkets and recommends where to shop. A human-approval step stays at the end: I review the basket and authorise the payment myself. This part is still being built and isn't live yet.</p>
+          <p>This turns the meals I've chosen into a suggested food order and recommends where to buy it. It isn't live yet. The design:</p>
+          <ul>
+            <li><strong>Ingredient extraction.</strong> Each chosen recipe is parsed into a structured ingredient list (item, quantity, unit), normalised to grams and millilitres and merged across the week's meals.</li>
+            <li><strong>Product matching.</strong> Each ingredient maps to candidate products at each retailer, keyed on barcode (EAN) with a name-matching fallback, and ranked by price per 100 g.</li>
+            <li><strong>Pack-size optimisation.</strong> It picks the pack sizes that cover the quantity needed for the least cost and the least waste.</li>
+            <li><strong>Price ingestion.</strong> One adapter per price source, the same pattern as my recruitment pipeline: licensed price feeds and open crowd-sourced price data, cached with an expiry, with the age of every price shown. It doesn't scrape sites that forbid it.</li>
+            <li><strong>Basket comparison.</strong> It totals the full basket per retailer, including delivery charges and minimum spend, then recommends where to shop and whether splitting the order is worth it.</li>
+            <li><strong>Handoff.</strong> The winning basket is presented as a suggested order, with product links and a draft handed to the retailer's basket. I review it and authorise the payment myself.</li>
+            <li><strong>Infrastructure.</strong> A small serverless backend holds the API keys, runs scheduled price refreshes and writes an event log of every recommendation.</li>
+          </ul>
           <h4>Reporting</h4>
           <p>Each week it turns the scale data and the training log into a progress report: what changed in weight, body fat, muscle mass and hydration, how that compares with the plan, and what to do next. There's also a countdown to my goal date.</p>
           <p class="small">My logs are stored on my device.</p>
@@ -295,6 +304,6 @@
   <p>© 2026 Kayne Elkins. Lighthouse screenshots use invented demo data. Rabbit Hole content comes from Wikipedia (CC BY-SA 4.0) and OpenAlex.</p>
 </footer>
 
-<script src="js/main.js?v=20261007t"></script>
+<script src="js/main.js?v=20261007u"></script>
 </body>
 </html>
