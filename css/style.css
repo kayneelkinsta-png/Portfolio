@@ -117,10 +117,13 @@ details[open] summary::before { transform: rotate(45deg); }
 .ink .built span { background: rgba(255, 255, 255, .12); }
 .card .built + details { margin-top: 1.1rem; }
 
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .two > .card, .two > .sector { margin-bottom: 0; }
 .two + .two { margin-top: 1.5rem; }
-.lead-row { align-items: start; }
+/* tiles in a row match height while closed; once one is opened, each keeps its own height */
+.two:has(details[open]) { align-items: start; }
+.lead-row .card.ink { display: flex; flex-direction: column; }
+.lead-row .card.ink .card-img { flex: 1 1 auto; min-height: 0; width: 100%; max-width: none; object-fit: cover; object-position: center; }
 .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .three > .sector { margin-bottom: 0; }
 
