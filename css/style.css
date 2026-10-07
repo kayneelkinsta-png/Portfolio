@@ -88,6 +88,9 @@ section { padding: 5rem 0 1rem; }
 .card-top p { font-size: 1.05rem; }
 .kicker { font: 600 .85rem var(--body); letter-spacing: .02em; opacity: .75; margin-bottom: .5rem !important; }
 .card-img { margin: 1.5rem 0; border-radius: 16px; width: 100%; }
+.lh-shot { float: right; width: 64%; max-width: 620px; margin: 0 0 1.25rem 2rem; border-radius: 16px; border: 1px solid rgba(20, 70, 60, .25); box-shadow: 0 14px 32px -18px rgba(20, 70, 60, .55); }
+.card.lilac .built, .card.lilac details { clear: both; }
+.card.lilac::after { content: ""; display: block; clear: both; }
 .card-img.portrait { max-width: 420px; margin-inline: auto; }
 .big-line { font: 700 clamp(1.6rem, 3.5vw, 2.2rem)/1.1 var(--display); letter-spacing: -.02em; margin: 1.5rem 0; }
 .link { font-weight: 600; text-decoration-thickness: 2px; text-underline-offset: 4px; }
@@ -173,6 +176,7 @@ details[open] summary::before { transform: rotate(45deg); }
 }
 
 @media (max-width: 760px) {
+  .lh-shot { float: none; width: 100%; max-width: none; margin: 0 0 1.25rem; }
   section { padding-top: 3.5rem; }
   .quotes { columns: 1; }
   .two, .three, .sector.big, .why-grid { grid-template-columns: 1fr; }
