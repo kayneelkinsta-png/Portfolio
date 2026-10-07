@@ -33,19 +33,23 @@
     document.querySelectorAll("main > section").forEach(function (s) { so.observe(s); });
   }
 
-  // The sparkle: weaves down the right-hand side as you scroll, spinning with the page
+  // The </>: follows you down the right-hand side, falling apart and coming back together as you scroll
   if (!buddy || reduce) return;
   var ticking = false;
   function place() {
     ticking = false;
-    var vw = window.innerWidth, vh = window.innerHeight;
+    var vw = window.innerWidth, vh = window.innerHeight, y0 = window.scrollY;
     var max = Math.max(1, document.documentElement.scrollHeight - vh);
-    var p = Math.min(1, Math.max(0, window.scrollY / max));
-    var size = vw < 760 ? 28 : 38;
-    var track = vw < 760 ? vw - size - 6 : Math.min(vw - size - 20, (vw + 1000) / 2 + 24);
-    var sway = (vw < 760 ? 8 : 26) * Math.sin(p * 22);
-    var y = 70 + p * (vh - 140 - size);
-    buddy.style.transform = "translate(" + (track + sway).toFixed(1) + "px," + y.toFixed(1) + "px) rotate(" + (window.scrollY * 0.18).toFixed(1) + "deg)";
+    var p = Math.min(1, Math.max(0, y0 / max));
+    var w = vw < 760 ? 52 : 74;
+    var track = vw < 760 ? vw - w - 8 : Math.min(vw - w - 20, (vw + 1000) / 2 + 12);
+    var sway = (vw < 760 ? 6 : 20) * Math.sin(p * 22);
+    var y = 70 + p * (vh - 150);
+    // one fall-apart-and-reassemble cycle every ~900px of scrolling; whole again at the top of the page
+    var s = (1 - Math.cos((y0 / 900) * Math.PI * 2)) / 2;
+    s = Math.pow(s, 1.4);
+    buddy.style.setProperty("--s", s.toFixed(3));
+    buddy.style.transform = "translate(" + (track + sway).toFixed(1) + "px," + y.toFixed(1) + "px)";
   }
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(place); } }
   window.addEventListener("scroll", onScroll, { passive: true });
