@@ -76,6 +76,8 @@ section { padding: 5rem 0 1rem; }
 .card.lilac { background: var(--lilac); }
 .card.peach { background: var(--peach); }
 .card.mint { background: var(--mint); }
+.card.blue { background: var(--blue); }
+.card.side { margin-top: 1.5rem; }
 .card.ink { background: var(--dark); color: #f3efe6; }
 .card-top { max-width: 36em; }
 .card-top p { font-size: 1.05rem; }
