@@ -31,6 +31,7 @@
     <a href="#why">Why</a>
     <a href="#work">Work</a>
     <a href="#pipeline">Pipeline</a>
+    <a href="#personal">Personal</a>
     <a href="#sectors">Sectors</a>
     <a href="#kind-words">Testimonials</a>
     <a href="#contact">Contact</a>
@@ -61,11 +62,10 @@
 </section>
 
 <section id="work" class="wrap" data-buddy="blue">
-  <h2>What I've built</h2>
+  <h2>Recruitment builds</h2>
 
-  <div class="two lead-row">
   <!-- NIMBUS -->
-  <article class="card lilac reveal">
+  <article class="card lilac reveal solo">
     <div class="card-top">
       <p class="kicker">Talent intelligence</p>
       <h3>Lighthouse</h3>
@@ -93,87 +93,6 @@
       </div>
     </details>
   </article>
-
-  <!-- RABBIT HOLE -->
-  <article class="card ink reveal">
-    <div class="card-top">
-      <p class="kicker">Live product</p>
-      <h3>Rabbit Hole</h3>
-      <p>Wikipedia as worlds you can fall into. Every article is a world, every orb is a real article it links to. Dive in, or play the daily challenge and reach a hidden goal in as few worlds as you can.</p>
-      <p><a class="link" href="https://kayneelkinsta-png.github.io/Rabbit-Hole/" rel="noopener" target="_blank">Try it ↗</a></p>
-    </div>
-    <img class="card-img portrait" src="assets/rabbit-hole.jpg" width="1080" height="1350" alt="Rabbit Hole showing the world for Chocolate: a circle of orbs, each a linked Wikipedia article with a picture." loading="lazy">
-    <p class="built"><b>Built with</b><span>JavaScript</span><span>three.js</span><span>Wikipedia API</span><span>OpenAlex</span><span>PWA</span><span>GitHub Pages + Actions</span></p>
-    <details>
-      <summary>How it works</summary>
-      <div class="more">
-        <h4>Why I built it</h4>
-        <p>I wanted curiosity to be the way in: no search box, no syllabus, just "what's that?" and a tap. It's also where I practised taking a product from idea to launch and talking about it in public. The direction is a one-stop place to learn a topic, with articles first, then research papers, then video.</p>
-        <h4>Data and APIs</h4>
-        <p>Each world is generated live from one Wikipedia article: its outgoing links become the orbs, with pictures and summaries fetched from the Wikipedia APIs. Research papers come from OpenAlex's open API and carry authors, citation counts and open-access status. The app installs as a web app. A network-first service worker means updates appear on the very next open, and the app itself still opens with no signal.</p>
-        <h4>Automation</h4>
-        <p>The daily challenge is automated end to end. A nightly GitHub Action runs the real app in a headless browser, builds the next two weeks of routes through the link graph and commits each as a data file, so everyone gets the same challenge. A seeded fallback covers any missing day. Share links carry the start, goal and difficulty, so a friend can play or try to beat your result.</p>
-        <h4>The research notebook</h4>
-        <p>Pin tiles, papers and passages with your notes and the trail that led you there. It formats APA, MLA and Harvard references and exports to Word, PDF or Google Docs. It saves on the device with no sign-up, so there's no personal data to look after. Topics are deep links, and the interface runs in six languages.</p>
-      </div>
-    </details>
-  </article>
-  </div>
-
-  <div class="two">
-    <!-- CIVICLENS -->
-    <article class="card peach reveal">
-      <div class="card-top">
-        <p class="kicker">Ongoing build</p>
-        <h3>CivicLens</h3>
-        <p>Friends and neighbours kept telling me that issues get reported and never fixed. So I built a map-first platform to test whether a public record, where residents confirm an issue is <em>still a problem</em>, puts more pressure on local authorities than a private inbox. Starting in Southampton, designed to work for any UK council.</p>
-        <p><a class="link" href="https://github.com/kayneelkinsta-png/civic-map" rel="noopener" target="_blank">View the code on GitHub ↗</a></p>
-        <p class="small">An ongoing build, worked on in phases, with Southampton as the first authority.</p>
-      </div>
-      <p class="big-line">See it. Report it. Confirm it. Track it.</p>
-      <p class="built"><b>Built with</b><span>TanStack Start</span><span>React</span><span>Supabase</span><span>Tailwind</span></p>
-    <details>
-        <summary>How it works</summary>
-        <div class="more">
-          <h4>Why I'm building it</h4>
-          <p>I kept hearing friends and neighbours say the same thing: issues get reported and never get fixed. So I looked into where the bottleneck sits, and asked whether a public record that tracks every report, with the community confirming it's still a problem, would put more pressure on local authorities than a private inbox ever could. Most reporting tools end the moment you hit submit. This one carries on, so a problem can't quietly disappear.</p>
-          <h4>Data model</h4>
-          <p>A relational Postgres schema covers authorities, wards, postcodes, infrastructure assets, issues, photos, confirmations, comments, followers, notifications and moderation actions. Every status change is written to a history table, so an issue's whole life is auditable. Row-level security controls who can see and change what.</p>
-          <h4>Geographic routing and open data</h4>
-          <p>Locations are stored as PostGIS geography points with spatial indexes, and a database function resolves each report to the right authority. I'm currently replacing the starter boundaries with real local-authority boundary data. Importers load open datasets, such as NaPTAN bus stops and green-space data, as assets a report can attach to. Geography is generic by design, so adding a second council is configuration, not a rebuild.</p>
-          <h4>Community verification</h4>
-          <p>Residents confirm an issue is still a problem, which keeps stale reports honest and surfaces what matters most. Residents appear as a first name and postcode district only. It's independent: not a council site, and it publishes no council response unless a verified authority provides it.</p>
-      </div>
-      </details>
-    </article>
-
-    <!-- PERSONAL PROJECT -->
-    <article class="card blue reveal side">
-      <img class="side-shot" src="assets/volt-workout.png" width="1120" height="2080" alt="VOLT's workout screen on a phone: Legs and core, with the squat's sets, reps and weight boxes ready to log." loading="lazy">
-      <div class="card-top">
-        <p class="kicker">Personal project · ordering in build</p>
-        <h3>VOLT</h3>
-        <p>A training and nutrition platform I use for my own workouts and meals. It ingests every logged workout set and its notes, syncs weekly smart-scale readings, and turns them into progress reports and next week's plan. Ordering and price comparison are in build.</p>
-        <p class="built"><b>Built with</b><span>Claude artifact</span><span>JavaScript</span><span>Claude AI coach</span><span>Smart-scale sync</span></p>
-      </div>
-      <details>
-        <summary>How it works</summary>
-        <div class="more">
-          <h4>Why I built it</h4>
-          <p>I wanted training, food and the weekly shop in one place, with a plan that adjusts to what I actually do. It's the same idea as my recruitment work: capture the data, spot the pattern, act on it.</p>
-          <h4>Data in, and the learning loop</h4>
-          <p>Three streams feed it: sets with weight, reps and free-text notes, daily nutrition and activity against targets, and weekly smart-scale readings of weight, body fat %, muscle mass % and water content. They're stored as time series so it compares trends against the plan. The notes and the trend go to an AI coach that adjusts next week's training.</p>
-          <h4>Nutrition engine</h4>
-          <p>It tracks daily targets for calories, protein, water and steps, balances calories and protein, suggests meals to choose from and writes out the full recipe for each one I pick.</p>
-          <h4>Weekly reporting</h4>
-          <p>Each week the scale data and the training log become a progress report: what changed in weight, body fat, muscle and hydration, how that compares with the plan, and what to do next.</p>
-          <h4>In build: ordering and price comparison</h4>
-          <p>Chosen meals are parsed into ingredients, normalised and merged, then matched to products by barcode and ranked by price per 100 g, with pack sizes optimised. Price adapters feed a cache that shows the age of every price, and never scrape sites that forbid it. It totals the full basket per retailer, delivery included, recommends where to shop, and hands me a suggested order to review and pay for myself. Not live yet.</p>
-          <p class="small">My logs are stored on my device.</p>
-        </div>
-      </details>
-    </article>
-  </div>
 </section>
 
 <section id="pipeline" class="wrap" data-buddy="coral">
@@ -234,6 +153,91 @@
 
   </div>
   <p class="small plan-note">Both would plug into a mock applicant tracking system with a shared event log, an approval step and an API, built on made-up data and labelled as such.</p>
+</section>
+
+<section id="personal" class="wrap" data-buddy="peach">
+  <h2>Personal builds</h2>
+  <p class="sub">The things I build for fun and curiosity, and to keep learning.</p>
+
+  <div class="two lead-row">
+  <!-- RABBIT HOLE -->
+  <article class="card ink reveal">
+    <div class="card-top">
+      <p class="kicker">Live product</p>
+      <h3>Rabbit Hole</h3>
+      <p>Wikipedia as worlds you can fall into. Every article is a world, every orb is a real article it links to. Dive in, or play the daily challenge and reach a hidden goal in as few worlds as you can.</p>
+      <p><a class="link" href="https://kayneelkinsta-png.github.io/Rabbit-Hole/" rel="noopener" target="_blank">Try it ↗</a></p>
+    </div>
+    <img class="card-img portrait" src="assets/rabbit-hole.jpg" width="1080" height="1350" alt="Rabbit Hole showing the world for Chocolate: a circle of orbs, each a linked Wikipedia article with a picture." loading="lazy">
+    <p class="built"><b>Built with</b><span>JavaScript</span><span>three.js</span><span>Wikipedia API</span><span>OpenAlex</span><span>PWA</span><span>GitHub Pages + Actions</span></p>
+    <details>
+      <summary>How it works</summary>
+      <div class="more">
+        <h4>Why I built it</h4>
+        <p>I wanted curiosity to be the way in: no search box, no syllabus, just "what's that?" and a tap. It's also where I practised taking a product from idea to launch and talking about it in public. The direction is a one-stop place to learn a topic, with articles first, then research papers, then video.</p>
+        <h4>Data and APIs</h4>
+        <p>Each world is generated live from one Wikipedia article: its outgoing links become the orbs, with pictures and summaries fetched from the Wikipedia APIs. Research papers come from OpenAlex's open API and carry authors, citation counts and open-access status. The app installs as a web app. A network-first service worker means updates appear on the very next open, and the app itself still opens with no signal.</p>
+        <h4>Automation</h4>
+        <p>The daily challenge is automated end to end. A nightly GitHub Action runs the real app in a headless browser, builds the next two weeks of routes through the link graph and commits each as a data file, so everyone gets the same challenge. A seeded fallback covers any missing day. Share links carry the start, goal and difficulty, so a friend can play or try to beat your result.</p>
+        <h4>The research notebook</h4>
+        <p>Pin tiles, papers and passages with your notes and the trail that led you there. It formats APA, MLA and Harvard references and exports to Word, PDF or Google Docs. It saves on the device with no sign-up, so there's no personal data to look after. Topics are deep links, and the interface runs in six languages.</p>
+      </div>
+    </details>
+  </article>
+
+    <!-- CIVICLENS -->
+    <article class="card peach reveal">
+      <div class="card-top">
+        <p class="kicker">Ongoing build</p>
+        <h3>CivicLens</h3>
+        <p>Friends and neighbours kept telling me that issues get reported and never fixed. So I built a map-first platform to test whether a public record, where residents confirm an issue is <em>still a problem</em>, puts more pressure on local authorities than a private inbox. Starting in Southampton, designed to work for any UK council.</p>
+        <p><a class="link" href="https://github.com/kayneelkinsta-png/civic-map" rel="noopener" target="_blank">View the code on GitHub ↗</a></p>
+        <p class="small">An ongoing build, worked on in phases, with Southampton as the first authority.</p>
+      </div>
+      <p class="big-line">See it. Report it. Confirm it. Track it.</p>
+      <p class="built"><b>Built with</b><span>TanStack Start</span><span>React</span><span>Supabase</span><span>Tailwind</span></p>
+    <details>
+        <summary>How it works</summary>
+        <div class="more">
+          <h4>Why I'm building it</h4>
+          <p>I kept hearing friends and neighbours say the same thing: issues get reported and never get fixed. So I looked into where the bottleneck sits, and asked whether a public record that tracks every report, with the community confirming it's still a problem, would put more pressure on local authorities than a private inbox ever could. Most reporting tools end the moment you hit submit. This one carries on, so a problem can't quietly disappear.</p>
+          <h4>Data model</h4>
+          <p>A relational Postgres schema covers authorities, wards, postcodes, infrastructure assets, issues, photos, confirmations, comments, followers, notifications and moderation actions. Every status change is written to a history table, so an issue's whole life is auditable. Row-level security controls who can see and change what.</p>
+          <h4>Geographic routing and open data</h4>
+          <p>Locations are stored as PostGIS geography points with spatial indexes, and a database function resolves each report to the right authority. I'm currently replacing the starter boundaries with real local-authority boundary data. Importers load open datasets, such as NaPTAN bus stops and green-space data, as assets a report can attach to. Geography is generic by design, so adding a second council is configuration, not a rebuild.</p>
+          <h4>Community verification</h4>
+          <p>Residents confirm an issue is still a problem, which keeps stale reports honest and surfaces what matters most. Residents appear as a first name and postcode district only. It's independent: not a council site, and it publishes no council response unless a verified authority provides it.</p>
+      </div>
+      </details>
+    </article>
+  </div>
+
+  <!-- PERSONAL PROJECT -->
+    <article class="card blue reveal side">
+      <img class="side-shot" src="assets/volt-workout.png" width="1120" height="2080" alt="VOLT's workout screen on a phone: Legs and core, with the squat's sets, reps and weight boxes ready to log." loading="lazy">
+      <div class="card-top">
+        <p class="kicker">Personal project · ordering in build</p>
+        <h3>VOLT</h3>
+        <p>A training and nutrition platform I use for my own workouts and meals. It ingests every logged workout set and its notes, syncs weekly smart-scale readings, and turns them into progress reports and next week's plan. Ordering and price comparison are in build.</p>
+        <p class="built"><b>Built with</b><span>Claude artifact</span><span>JavaScript</span><span>Claude AI coach</span><span>Smart-scale sync</span></p>
+      </div>
+      <details>
+        <summary>How it works</summary>
+        <div class="more">
+          <h4>Why I built it</h4>
+          <p>I wanted training, food and the weekly shop in one place, with a plan that adjusts to what I actually do. It's the same idea as my recruitment work: capture the data, spot the pattern, act on it.</p>
+          <h4>Data in, and the learning loop</h4>
+          <p>Three streams feed it: sets with weight, reps and free-text notes, daily nutrition and activity against targets, and weekly smart-scale readings of weight, body fat %, muscle mass % and water content. They're stored as time series so it compares trends against the plan. The notes and the trend go to an AI coach that adjusts next week's training.</p>
+          <h4>Nutrition engine</h4>
+          <p>It tracks daily targets for calories, protein, water and steps, balances calories and protein, suggests meals to choose from and writes out the full recipe for each one I pick.</p>
+          <h4>Weekly reporting</h4>
+          <p>Each week the scale data and the training log become a progress report: what changed in weight, body fat, muscle and hydration, how that compares with the plan, and what to do next.</p>
+          <h4>In build: ordering and price comparison</h4>
+          <p>Chosen meals are parsed into ingredients, normalised and merged, then matched to products by barcode and ranked by price per 100 g, with pack sizes optimised. Price adapters feed a cache that shows the age of every price, and never scrape sites that forbid it. It totals the full basket per retailer, delivery included, recommends where to shop, and hands me a suggested order to review and pay for myself. Not live yet.</p>
+          <p class="small">My logs are stored on my device.</p>
+        </div>
+      </details>
+    </article>
 </section>
 
 <section id="sectors" class="wrap" data-buddy="green">

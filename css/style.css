@@ -91,6 +91,7 @@ section { padding: 5rem 0 1rem; }
 .kicker { font: 600 .85rem var(--body); letter-spacing: .02em; opacity: .75; margin-bottom: .5rem !important; }
 .card-img { margin: 1.5rem 0; border-radius: 16px; width: 100%; }
 .lh-shot { display: block; width: 100%; height: auto; margin: 1.25rem 0 0; border-radius: 16px; border: 1px solid rgba(20, 70, 60, .25); box-shadow: 0 14px 32px -18px rgba(20, 70, 60, .55); }
+.card.solo .lh-shot { max-width: 480px; margin-inline: auto; }
 .card-img.portrait { max-width: 420px; margin-inline: auto; }
 .big-line { font: 700 clamp(1.6rem, 3.5vw, 2.2rem)/1.1 var(--display); letter-spacing: -.02em; margin: 1.5rem 0; }
 .link { font-weight: 600; text-decoration-thickness: 2px; text-underline-offset: 4px; }
@@ -119,7 +120,7 @@ details[open] summary::before { transform: rotate(45deg); }
 
 .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .two > .card, .two > .sector { margin-bottom: 0; }
-.two + .two { margin-top: 1.5rem; }
+.two + .two, .two + .card { margin-top: 1.5rem; }
 /* tiles in a row match height while closed; once one is opened, each keeps its own height */
 .two:has(details[open]) { align-items: start; }
 .lead-row .card.ink { display: flex; flex-direction: column; }
