@@ -175,6 +175,7 @@ details[open] summary::before { transform: rotate(45deg); }
 
 /* contact + buttons */
 .contact { padding-bottom: 4rem; }
+.contact .seeking { text-align: left; margin-left: 0; }
 .cta { display: flex; flex-wrap: wrap; gap: .75rem; margin: 2rem 0 1.5rem; }
 .btn { display: inline-block; padding: .8rem 1.4rem; border-radius: 99px; border: 2px solid var(--ink); font-weight: 600; text-decoration: none; transition: transform .15s, background .15s, color .15s; }
 .btn:hover { transform: translateY(-2px); background: var(--ink); color: var(--paper); }
